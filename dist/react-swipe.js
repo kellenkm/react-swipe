@@ -1242,6 +1242,8 @@ _defineProperty(ReactSwipe, "propTypes", {
     speed: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number,
     auto: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number,
     continuous: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
+    continuous_end: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
+    no_back: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
     disableScroll: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
     stopPropagation: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.bool,
     swiping: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,

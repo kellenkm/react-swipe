@@ -10,6 +10,7 @@ class ReactSwipe extends Component {
       auto: PropTypes.number,
       continuous: PropTypes.bool,
       continuous_end: PropTypes.bool,
+      no_back: PropTypes.bool,
       disableScroll: PropTypes.bool,
       stopPropagation: PropTypes.bool,
       swiping: PropTypes.func,
