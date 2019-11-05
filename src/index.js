@@ -23,7 +23,6 @@ class ReactSwipe extends Component {
       child: PropTypes.object
     }),
     id: PropTypes.string,
-    forwardedRef: PropTypes.object,
     className: PropTypes.string,
     childCount: PropTypes.number
   };
@@ -52,7 +51,7 @@ class ReactSwipe extends Component {
   };
 
   componentDidMount() {
-    this.props.forwardedRef = this;
+    this.props.setForwardedRef(this);
     this.swipe = Swipe(this.containerEl, this.props.swipeOptions);
   }
 

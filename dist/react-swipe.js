@@ -1156,7 +1156,7 @@ function (_Component) {
   _createClass(ReactSwipe, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.forwardedRef = this;
+      this.props.setForwardedRef(this);
       this.swipe = swipe_js_iso__WEBPACK_IMPORTED_MODULE_2___default()(this.containerEl, this.props.swipeOptions);
     }
   }, {
@@ -1257,7 +1257,6 @@ _defineProperty(ReactSwipe, "propTypes", {
     child: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object
   }),
   id: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
-  forwardedRef: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
   childCount: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number
 });
