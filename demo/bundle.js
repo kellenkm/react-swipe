@@ -25326,6 +25326,8 @@ _defineProperty(ReactSwipe, "propTypes", {
     speed: _propTypes.default.number,
     auto: _propTypes.default.number,
     continuous: _propTypes.default.bool,
+    continuous_end: _propTypes.default.bool,
+    no_back: _propTypes.default.bool,
     disableScroll: _propTypes.default.bool,
     stopPropagation: _propTypes.default.bool,
     swiping: _propTypes.default.func,
