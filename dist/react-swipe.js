@@ -1156,16 +1156,18 @@ function (_Component) {
   _createClass(ReactSwipe, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.swipe = swipe_js_iso__WEBPACK_IMPORTED_MODULE_2___default()(this.containerEl, this.props.swipeOptions);
+      if (this.props.forwardedRef.current) {
+        this.swipe = swipe_js_iso__WEBPACK_IMPORTED_MODULE_2___default()(this.props.forwardedRef, this.props.swipeOptions);
+      }
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var childCount = this.props.childCount;
 
-      if (prevProps.childCount !== childCount) {
+      if (prevProps.childCount !== childCount || !(this.swipe && this.props.forwardedRef.current)) {
         this.swipe.kill();
-        this.swipe = swipe_js_iso__WEBPACK_IMPORTED_MODULE_2___default()(this.containerEl, this.props.swipeOptions);
+        this.swipe = swipe_js_iso__WEBPACK_IMPORTED_MODULE_2___default()(this.props.forwardedRef, this.props.swipeOptions);
       }
     }
   }, {
@@ -1204,18 +1206,15 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       var _this$props = this.props,
           id = _this$props.id,
           className = _this$props.className,
           style = _this$props.style,
           children = _this$props.children;
+      console.log('this.props.forwardedRef', this.props.forwardedRef);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: id,
-        ref: function ref(el) {
-          return _this.containerEl = el;
-        },
+        ref: this.props.forwardedRef,
         className: "react-swipe-container ".concat(className),
         style: style.container
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -1255,6 +1254,7 @@ _defineProperty(ReactSwipe, "propTypes", {
     wrapper: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
     child: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object
   }),
+  forwardedRef: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
   id: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
   className: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
   childCount: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number

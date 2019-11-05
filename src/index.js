@@ -22,6 +22,7 @@ class ReactSwipe extends Component {
       wrapper: PropTypes.object,
       child: PropTypes.object
     }),
+    forwardedRef: PropTypes.object,
     id: PropTypes.string,
     className: PropTypes.string,
     childCount: PropTypes.number
@@ -51,15 +52,20 @@ class ReactSwipe extends Component {
   };
 
   componentDidMount() {
-    this.swipe = Swipe(this.containerEl, this.props.swipeOptions);
+    if (this.props.forwardedRef.current) {
+      this.swipe = Swipe(this.props.forwardedRef, this.props.swipeOptions);
+    }
   }
 
   componentDidUpdate(prevProps) {
     const { childCount } = this.props;
 
-    if (prevProps.childCount !== childCount) {
+    if (
+      prevProps.childCount !== childCount ||
+      !(this.swipe && this.props.forwardedRef.current)
+    ) {
       this.swipe.kill();
-      this.swipe = Swipe(this.containerEl, this.props.swipeOptions);
+      this.swipe = Swipe(this.props.forwardedRef, this.props.swipeOptions);
     }
   }
 
@@ -91,10 +97,11 @@ class ReactSwipe extends Component {
   render() {
     const { id, className, style, children } = this.props;
 
+    console.log('this.props.forwardedRef', this.props.forwardedRef);
     return (
       <div
         id={id}
-        ref={el => (this.containerEl = el)}
+        ref={this.props.forwardedRef}
         className={`react-swipe-container ${className}`}
         style={style.container}
       >
