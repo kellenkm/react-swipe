@@ -25241,7 +25241,7 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       if (this.props.forwardedRef.current) {
-        this.swipe = (0, _swipeJsIso.default)(this.props.forwardedRef, this.props.swipeOptions);
+        this.swipe = (0, _swipeJsIso.default)(this.props.forwardedRef.current, this.props.swipeOptions);
       }
     }
   }, {
@@ -25251,7 +25251,7 @@ function (_Component) {
 
       if (prevProps.childCount !== childCount || !(this.swipe && this.props.forwardedRef.current)) {
         this.swipe.kill();
-        this.swipe = (0, _swipeJsIso.default)(this.props.forwardedRef, this.props.swipeOptions);
+        this.swipe = (0, _swipeJsIso.default)(this.props.forwardedRef.current, this.props.swipeOptions);
       }
     }
   }, {

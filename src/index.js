@@ -53,7 +53,10 @@ class ReactSwipe extends Component {
 
   componentDidMount() {
     if (this.props.forwardedRef.current) {
-      this.swipe = Swipe(this.props.forwardedRef, this.props.swipeOptions);
+      this.swipe = Swipe(
+        this.props.forwardedRef.current,
+        this.props.swipeOptions
+      );
     }
   }
 
@@ -65,7 +68,10 @@ class ReactSwipe extends Component {
       !(this.swipe && this.props.forwardedRef.current)
     ) {
       this.swipe.kill();
-      this.swipe = Swipe(this.props.forwardedRef, this.props.swipeOptions);
+      this.swipe = Swipe(
+        this.props.forwardedRef.current,
+        this.props.swipeOptions
+      );
     }
   }
 
