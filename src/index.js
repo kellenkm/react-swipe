@@ -23,6 +23,7 @@ class ReactSwipe extends Component {
       child: PropTypes.object
     }),
     id: PropTypes.string,
+    forwardedRef: PropTypes.object,
     className: PropTypes.string,
     childCount: PropTypes.number
   };

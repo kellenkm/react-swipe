@@ -1257,6 +1257,7 @@ _defineProperty(ReactSwipe, "propTypes", {
     child: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object
   }),
   id: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
+  forwardedRef: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
   childCount: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number
 });
