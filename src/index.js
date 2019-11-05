@@ -51,6 +51,7 @@ class ReactSwipe extends Component {
   };
 
   componentDidMount() {
+    this.props.forwardedRef = this;
     this.swipe = Swipe(this.containerEl, this.props.swipeOptions);
   }
 

@@ -1156,6 +1156,7 @@ function (_Component) {
   _createClass(ReactSwipe, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.props.forwardedRef = this;
       this.swipe = swipe_js_iso__WEBPACK_IMPORTED_MODULE_2___default()(this.containerEl, this.props.swipeOptions);
     }
   }, {
